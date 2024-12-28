@@ -10,8 +10,8 @@ function Success() {
       <div className="success-info">
         <p>TEBRİKLER!</p>
         <p>SİPARİŞİNİZ ALINDI!</p>
-      </div>
-      </>
+      </div> 
+      </> 
     );
   }
 

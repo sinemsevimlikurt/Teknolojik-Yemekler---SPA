@@ -3,7 +3,7 @@ import axios from "axios";
 import { data } from "../sahteVeri.js";
 import Success from "./Success.jsx";
 import "../css/OrderPizza.css"
-import "../../images/iteration-1-images/logo.svg"
+import "../../images/iteration-1-images/logo.svg" 
 
 function OrderPizza() {
   const { name, price, description, rating } = data[5];
