@@ -1,0 +1,28 @@
+body{
+    background-color: red; 
+}
+.headline{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-family: "Barlow";
+    font-weight: 600;
+    color: white;
+}
+.success-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    height: 200px;
+    row-gap: 1px;
+    
+}
+.success-info p {
+    font-family: "Barlow";
+    color: white;
+    font-size:xx-large;
+    margin: 0;
+
+}
