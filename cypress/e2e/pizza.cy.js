@@ -31,7 +31,6 @@ describe("OrderPizza Tests", () => {
       cy.contains("+").click();
       cy.get('[data-cy="submit-button"]').should("not.be.disabled").click();
   
-      // Başarı mesajının görünmesi
       cy.contains("TEBRİKLER!").should("exist");
       cy.contains("SİPARİŞİNİZ ALINDI!").should("exist");
     });
