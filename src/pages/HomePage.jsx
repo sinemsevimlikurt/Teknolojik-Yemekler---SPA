@@ -14,9 +14,9 @@ function HomePage() {
     <div className="home">
       <img src="../../images/iteration-1-images/logo.svg" alt="" />
       <div className="home-text">
-        <p>KOD ACIKTIRIR<br />PİZZA, DOYURUR</p>
+      <h4>KOD ACIKTIRIR PİZZA, DOYURUR</h4>
       </div>
-      <button className="home-button" onClick={() => setShowOrderPizza(true)}>
+      <button data-cy="home-button" className="home-button" onClick={() => setShowOrderPizza(true)}>
         ACIKTIM
       </button>
     </div>

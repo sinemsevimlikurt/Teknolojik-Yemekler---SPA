@@ -15,6 +15,7 @@ function OrderPizza() {
   const [total, setTotal] = useState(0);
   const [isFormValid, setIsFormValid] = useState(false);
   const [isOrderSuccess, setIsOrderSuccess] = useState(false);
+  const [userName, setUserName] = useState("");
 
   const handleSizeChange = (event) => {
     setSize(event.target.value);
@@ -51,6 +52,10 @@ function OrderPizza() {
       const newPiece = action === "increment" ? prevPiece + 1 : prevPiece - 1;
       return Math.max(1, newPiece);
     });
+  };
+
+  const handleUserNameChange = (event) => {
+    setUserName(event.target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -156,7 +161,7 @@ function OrderPizza() {
         </fieldset>
         </section>
         <fieldset className="checkbox">
-          <legend>Ek Malzemeler</legend>
+          <legend>Ek Malzemeler (en az 4 malzeme seçmelisiniz)</legend>
           {[
             "Pepperoni",
             "Sosis",
@@ -173,21 +178,43 @@ function OrderPizza() {
             "Kabak",
           ].map((malzeme) => (
             <div className="extras" key={malzeme}>
-              <input onChange={handleExtrasChange} type="checkbox" id={malzeme} />
+              <input onChange={handleExtrasChange} type="checkbox" id={malzeme} data-cy="checkboxes"/>
               <label htmlFor={malzeme}>{malzeme}</label>
             </div>
           ))}
         </fieldset>
          
         <fieldset>
-          <legend>Sipariş Notu</legend>
-          <textarea
-            onChange={handleNoteChange}
-            placeholder="Siparişe eklemek istediğiniz bir not var mı?"
-            rows="5"
-            cols="50"
-          />
-        </fieldset>
+  <legend>Adınız</legend>
+  <input
+    type="text"
+    placeholder="Adınız... (zorunlu*)"
+    value={userName}
+    onChange={handleUserNameChange}
+    style={{ width: "50%" }}
+    data-cy="input-username"
+  />
+  <label
+    htmlFor="note"
+    style={{
+      display: "block",
+      marginTop: "10px",
+      fontWeight: "bold",
+    }}
+  >
+    Sipariş Notu
+  </label>
+  <textarea
+    id="note"
+    onChange={handleNoteChange}
+    placeholder="Siparişe eklemek istediğiniz bir not var mı?"
+    rows="5"
+    cols="50"
+    data-cy="textarea-order-note"
+  />
+</fieldset>
+
+
         <section className="order">
         <fieldset>
           <legend>Adet</legend>
@@ -204,7 +231,7 @@ function OrderPizza() {
           <p style={{color: "red", fontWeight:"bold"}}>Toplam: {total} ₺</p>
         </fieldset>
 
-        <button className="submit-button" type="submit" disabled={!isFormValid}><p>SİPARİŞ VER</p></button>
+        <button className="submit-button" type="submit" disabled={!isFormValid || extras.length < 4 || userName.length < 3} data-cy="submit-button"><p>SİPARİŞ VER</p></button>
         </section>
         </section>
       </form>
