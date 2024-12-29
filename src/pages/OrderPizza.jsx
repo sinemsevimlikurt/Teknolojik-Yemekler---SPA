@@ -156,7 +156,8 @@ function OrderPizza() {
           </section>
 
           <fieldset className="checkbox">
-            <legend>Ek Malzemeler (en az 4 malzeme seçmelisiniz)</legend>
+            <legend>Ek Malzemeler <br/>
+             <span style={{color: "#5e5e5e", fontSize:"10px", fontWeight: "500"}}>En az 4 malzeme seçmelisiniz (5 ₺) </span></legend>
             {[
               "Pepperoni",
               "Sosis",
