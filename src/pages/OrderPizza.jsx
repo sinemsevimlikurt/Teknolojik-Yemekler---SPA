@@ -8,7 +8,7 @@ import "../../images/iteration-1-images/logo.svg";
 function OrderPizza() {
   const { name, price, description, rating } = data[5];
 
-  const [size, setSize] = useState("Orta");
+  const [size, setSize] = useState("orta");
   const [dough, setDough] = useState("İnce");
   const [extras, setExtras] = useState([]);
   const [note, setNote] = useState("");
@@ -19,6 +19,7 @@ function OrderPizza() {
   const [userName, setUserName] = useState("");
 
   const handleSizeChange = (event) => setSize(event.target.value);
+
   const handleDoughChange = (event) => setDough(event.target.value);
 
   const handleExtrasChange = (event) => {
@@ -111,6 +112,7 @@ function OrderPizza() {
               <legend>Boyut Seç</legend>
               <div>
                 <input
+                  checked={size === "kucuk"}
                   onChange={handleSizeChange}
                   type="radio"
                   name="boyut"
@@ -121,6 +123,7 @@ function OrderPizza() {
               </div>
               <div>
                 <input
+                  checked={size === "orta"}
                   onChange={handleSizeChange}
                   type="radio"
                   name="boyut"
@@ -131,6 +134,7 @@ function OrderPizza() {
               </div>
               <div>
                 <input
+                  checked={size === "buyuk"}
                   onChange={handleSizeChange}
                   type="radio"
                   name="boyut"
