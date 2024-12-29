@@ -9,6 +9,9 @@ body{
     font-weight: 600;
     color: white;
 }
+.headline img {
+    margin-top: 40px;
+}
 .success-info{
     display: flex;
     flex-direction: column;
