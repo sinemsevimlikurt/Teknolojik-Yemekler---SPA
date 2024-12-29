@@ -86,7 +86,7 @@ function OrderPizza() {
   }
 
   return (
-    <div>
+    <>
       <header>
         <img src="../../images/iteration-1-images/logo.svg" alt="Logo" />
         <div className="order-header-buttons">
@@ -146,6 +146,7 @@ function OrderPizza() {
             </fieldset>
 
             <fieldset>
+              
               <legend>Hamur Seç</legend>
               <select onChange={handleDoughChange} name="hamur">
                 <option value="ince">İnce</option>
@@ -195,6 +196,7 @@ function OrderPizza() {
               style={{ width: "50%" }}
               data-cy="input-username"
             />
+
             <label
               htmlFor="note"
               style={{
@@ -237,19 +239,19 @@ function OrderPizza() {
                   Toplam: {total} ₺
                 </p>
               </fieldset>
+              
               <button
                 className="submit-button"
                 type="submit"
                 disabled={!isFormValid || extras.length < 4 || userName.length < 3}
-                data-cy="submit-button"
-              >
+                data-cy="submit-button">
                 <p>SİPARİŞ VER</p>
               </button>
             </section>
           </section>
         </form>
       </main>
-    </div>
+    </>
   );
 }
 
