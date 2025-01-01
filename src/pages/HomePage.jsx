@@ -9,6 +9,7 @@ import "../../images/iteration-2-images/icons/4.svg"
 import "../../images/iteration-2-images/icons/5.svg"
 import "../../images/iteration-2-images/icons/6.svg"
 import SuggestionCards from '../components/SuggestionCards';
+import Products from '../components/Products';
 
 function HomePage() {
   const [showOrderPizza, setShowOrderPizza] = useState(false);
@@ -49,6 +50,7 @@ function HomePage() {
           <ul><li><img src="../../images/iteration-2-images/icons/6.svg"/>Soft drinks</li></ul>
         </nav>
       </div>
+      <Products />
     </div>
   );
 }
