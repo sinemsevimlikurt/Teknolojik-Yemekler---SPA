@@ -8,10 +8,12 @@ function Success() {
       <div className="headline">
       <img src="../../images/iteration-1-images/logo.svg" alt="" />
       </div>
+  
       <div className="success-info">
         <p>TEBRİKLER!</p>
         <p>SİPARİŞİNİZ ALINDI!</p>
       </div> 
+    
       </> 
     );
   }

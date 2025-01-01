@@ -48,3 +48,20 @@ export const data = [
     "description": "Dört farklı peynirle güçlü bir yazılım kütüphanesi gibi. Bu pizza, peynirin tüm zengin lezzetlerini bir araya getirir. Mozzarella, cheddar, parmesan ve gorgonzola peynirlerinin birleşimi, her ısırıkta yeni bir tat deneyimi sunar. Yüksek kaliteli peynirler, pizzayı hem lezzetli hem de besleyici kılar. Peynirin zengin tatları, her lokmada damakları şenlendirir. Dört peynirin birleşimi, pizzayı daha da özel kılar. Peynir severler için mükemmel bir alternatif olan bu pizza, aynı zamanda doyurucudur. Her bir peynir türü, kendi özel aromasıyla pizzayı benzersiz kılar. Hem zengin hem de sağlıklı olan bu pizza, mükemmel bir deneyim sunar. Bu pizza, peynirin en lezzetli halini tatmak isteyenler için ideal bir tercihtir."
   }
 ];
+export const mainCard = {
+  id: 1000,
+  name: "Reduce Spicy Veggie",
+  header: "Özel Lezzetus",
+  image: "../images/iteration-2-images/cta/kart-1.png"
+}
+
+export const suggestionCards = [{
+  id: 1001,
+  name: "Hackathlon Burger Menü",
+  image: "../images/iteration-2-images/cta/kart-2.png"
+}, {
+  id: 1002,
+  name: "Reduce Spicy Veggie",
+  header: "Özel Lezzetus",
+  image: "../images/iteration-2-images/cta/kart-3.png"
+}]

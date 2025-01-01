@@ -9,7 +9,7 @@ function OrderPizza() {
   const { name, price, description, rating } = data[5];
 
   const [size, setSize] = useState("orta");
-  const [dough, setDough] = useState("İnce");
+  const [dough, setDough] = useState("default");
   const [extras, setExtras] = useState([]);
   const [note, setNote] = useState("");
   const [piece, setPiece] = useState(1);
@@ -149,6 +149,7 @@ function OrderPizza() {
               
               <legend>Hamur Seç</legend>
               <select onChange={handleDoughChange} name="hamur">
+                <option value="default" >-- Hamur Kalınlığı Seç --</option>
                 <option value="ince">İnce</option>
                 <option value="normal">Normal</option>
                 <option value="kalin">Kalın</option>
