@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { data } from "../sahteVeri.js";
-import Success from "./Success.jsx";
 import "../css/OrderPizza.css";
 import "../../images/iteration-1-images/logo.svg";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min.js";
 
 function OrderPizza() {
   const { name, price, description, rating } = data[5];
@@ -15,8 +15,25 @@ function OrderPizza() {
   const [piece, setPiece] = useState(1);
   const [total, setTotal] = useState(0);
   const [isFormValid, setIsFormValid] = useState(false);
-  const [isOrderSuccess, setIsOrderSuccess] = useState(false);
   const [userName, setUserName] = useState("");
+
+  const history = useHistory();
+  const navigateToSuccess = () => {
+    history.push("/success");
+  };
+
+  const sizeOptions = [
+    { label: "Küçük", value: "kucuk" },
+    { label: "Orta", value: "orta" },
+    { label: "Büyük", value: "buyuk" },
+  ];
+
+  const doughOptions = [
+    { label: "-- Hamur Kalınlığı Seç --", value: "default" },
+    { label: "İnce", value: "ince" },
+    { label: "Normal", value: "normal" },
+    { label: "Kalın", value: "kalin" },
+  ];
 
   const handleSizeChange = (event) => setSize(event.target.value);
 
@@ -65,7 +82,6 @@ function OrderPizza() {
     try {
       const response = await axios.post("https://reqres.in/api/pizza", orderData);
       console.log("Sipariş Özeti:", response.data);
-      setIsOrderSuccess(true);
     } catch (error) {
       console.error("Sipariş başarısız:", error);
     }
@@ -80,10 +96,6 @@ function OrderPizza() {
     const totalPrice = extras.length * 5 + parseFloat(price) * piece;
     setTotal(totalPrice);
   }, [extras, price, piece]);
-
-  if (isOrderSuccess) {
-    return <Success />;
-  }
 
   return (
     <>
@@ -110,56 +122,39 @@ function OrderPizza() {
           <section className="pizza-options">
             <fieldset>
               <legend>Boyut Seç</legend>
-              <div>
-                <input
-                  checked={size === "kucuk"}
-                  onChange={handleSizeChange}
-                  type="radio"
-                  name="boyut"
-                  value="kucuk"
-                  id="kucuk"
-                />
-                <label htmlFor="kucuk">Küçük</label>
-              </div>
-              <div>
-                <input
-                  checked={size === "orta"}
-                  onChange={handleSizeChange}
-                  type="radio"
-                  name="boyut"
-                  value="orta"
-                  id="orta"
-                />
-                <label htmlFor="orta">Orta</label>
-              </div>
-              <div>
-                <input
-                  checked={size === "buyuk"}
-                  onChange={handleSizeChange}
-                  type="radio"
-                  name="boyut"
-                  value="buyuk"
-                  id="buyuk"
-                />
-                <label htmlFor="buyuk">Büyük</label>
-              </div>
+              {sizeOptions.map((option) => (
+                <div key={option.value}>
+                  <input
+                    checked={size === option.value}
+                    onChange={handleSizeChange}
+                    type="radio"
+                    name="boyut"
+                    value={option.value}
+                    id={option.value}
+                  />
+                  <label htmlFor={option.value}>{option.label}</label>
+                </div>
+              ))}
             </fieldset>
 
             <fieldset>
-              
               <legend>Hamur Seç</legend>
-              <select onChange={handleDoughChange} name="hamur">
-                <option value="default" >-- Hamur Kalınlığı Seç --</option>
-                <option value="ince">İnce</option>
-                <option value="normal">Normal</option>
-                <option value="kalin">Kalın</option>
+              <select onChange={handleDoughChange} name="hamur" value={dough}>
+                {doughOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
               </select>
             </fieldset>
           </section>
 
           <fieldset className="checkbox">
-            <legend>Ek Malzemeler <br/>
-             <span style={{color: "#5e5e5e", fontSize:"10px", fontWeight: "500"}}>En az 4 malzeme seçmelisiniz (5 ₺) </span></legend>
+            <legend>Ek Malzemeler <br />
+              <span style={{ color: "#5e5e5e", fontSize: "10px", fontWeight: "500" }}>
+                En az 4 malzeme seçmelisiniz (5 ₺)
+              </span>
+            </legend>
             {[
               "Pepperoni",
               "Sosis",
@@ -240,12 +235,14 @@ function OrderPizza() {
                   Toplam: {total} ₺
                 </p>
               </fieldset>
-              
+
               <button
                 className="submit-button"
                 type="submit"
                 disabled={!isFormValid || extras.length < 4 || userName.length < 3}
-                data-cy="submit-button">
+                data-cy="submit-button"
+                onClick={navigateToSuccess}
+              >
                 <p>SİPARİŞ VER</p>
               </button>
             </section>

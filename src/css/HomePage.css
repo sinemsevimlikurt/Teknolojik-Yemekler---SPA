@@ -70,6 +70,7 @@ body {
     border-radius: 900px;
     border: none;
     color: #000;
+    
 }
 @media (max-width: 480px) {
     .home img {

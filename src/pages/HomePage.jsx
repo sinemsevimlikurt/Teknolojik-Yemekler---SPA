@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "../css/HomePage.css";
-import OrderPizza from './OrderPizza';
 import "../../images/iteration-1-images/logo.svg"
 import "../../images/iteration-2-images/icons/1.svg"
 import "../../images/iteration-2-images/icons/2.svg"
@@ -10,12 +9,13 @@ import "../../images/iteration-2-images/icons/5.svg"
 import "../../images/iteration-2-images/icons/6.svg"
 import SuggestionCards from '../components/SuggestionCards';
 import Products from '../components/Products';
+import { useHistory } from 'react-router-dom';
 
 function HomePage() {
-  const [showOrderPizza, setShowOrderPizza] = useState(false);
+  const history = useHistory()
 
-  if (showOrderPizza) {
-    return <OrderPizza />;
+  const navigateToOrder = () => {
+    history.push("/order")
   }
 
   return (
@@ -24,7 +24,7 @@ function HomePage() {
       <div className="home-text">
       <h4>KOD ACIKTIRIR PİZZA, DOYURUR</h4>
       </div>
-      <button data-cy="home-button" className="home-button" onClick={() => setShowOrderPizza(true)}>
+      <button data-cy="home-button" className="home-button" onClick={navigateToOrder}>
         ACIKTIM
       </button>
       <div className="header-nav-buttons">
