@@ -19,7 +19,8 @@ function HomePage() {
   }
 
   return (
-    <div className="home">
+    <div className="homepage">
+      <div className="home">
       <img src="../../images/iteration-1-images/logo.svg" alt="" />
       <div className="home-text">
       <h4>KOD ACIKTIRIR PİZZA, DOYURUR</h4>
@@ -27,14 +28,17 @@ function HomePage() {
       <button data-cy="home-button" className="home-button" onClick={navigateToOrder}>
         ACIKTIM
       </button>
+      </div>
       <div className="header-nav-buttons">
         <nav>
-          <ul><li><img src="../../images/iteration-2-images/icons/1.svg"/>YENİ! Kore</li></ul>
-          <ul><li><img src="../../images/iteration-2-images/icons/2.svg"/>Pizza</li></ul>
-          <ul><li><img src="../../images/iteration-2-images/icons/3.svg"/>Burger</li></ul>
-          <ul><li><img src="../../images/iteration-2-images/icons/4.svg"/>Kızartmalar</li></ul>
-          <ul><li><img src="../../images/iteration-2-images/icons/5.svg"/>Fast Food</li></ul>
-          <ul><li><img src="../../images/iteration-2-images/icons/6.svg"/>Gazlı İçecek</li></ul>
+          <ul>
+          <li><img src="../../images/iteration-2-images/icons/1.svg"/><p>YENİ! Kore</p></li>
+          <li><img src="../../images/iteration-2-images/icons/2.svg"/><p>Pizza</p></li>
+          <li><img src="../../images/iteration-2-images/icons/3.svg"/><p>Burger</p></li>
+          <li><img src="../../images/iteration-2-images/icons/4.svg"/><p>Kızartmalar</p></li>
+          <li><img src="../../images/iteration-2-images/icons/5.svg"/><p>Fast Food</p></li>
+          <li><img src="../../images/iteration-2-images/icons/6.svg"/><p>Gazlı İçecek</p></li>
+          </ul>
         </nav>
       </div>
       <SuggestionCards />

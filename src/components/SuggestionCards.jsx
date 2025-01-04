@@ -1,5 +1,5 @@
 import React from 'react'
-import { mainCard, suggestionCards } from '../sahteVeri'
+import { mainCard, suggestionCardsData } from '../sahteVeri'
 import SuggestionCard from './SuggestionCard'
 
 function SuggestionCards() {
@@ -9,7 +9,7 @@ function SuggestionCards() {
            <SuggestionCard item={mainCard}/>
         </div>
         <div className="side-suggestioncard">
-           {suggestionCards.map((item) => (
+           {suggestionCardsData.map((item) => (
             <SuggestionCard item={item} key={item.id}/>
            ))}
         </div>

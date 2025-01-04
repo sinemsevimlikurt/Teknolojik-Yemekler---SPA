@@ -55,7 +55,7 @@ export const mainCard = {
   image: "../images/iteration-2-images/cta/kart-1.png"
 }
 
-export const suggestionCards = [{
+export const suggestionCardsData = [{
   id: 1001,
   name: "Hackathlon Burger Menü",
   image: "../images/iteration-2-images/cta/kart-2.png"
