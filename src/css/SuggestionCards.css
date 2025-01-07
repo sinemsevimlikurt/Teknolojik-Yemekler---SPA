@@ -1,0 +1,72 @@
+.suggestion-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 520px;
+    padding: 0 18vw;
+}
+
+.main-suggestioncard article {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.card-texts {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 60%;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.card-texts p {
+    font-size: 4.2vw;
+    font-weight: 500;
+    line-height: 100%;
+    font-family: "Quattrocento", serif;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+.card-texts h4 {
+    margin-left: 20px;
+    margin-bottom: 40px;
+    font-family: "Roboto Condensed", serif;
+    font-size: 1.2vw;
+}
+
+.order-button button {
+    border: none;
+    border-radius: 900px;
+    color: #ce2829;
+    background-color: #fff;
+    margin-left: 20px;
+    padding: 15px 35px;
+}
+
+.side-suggestioncard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.side-suggestioncard article {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.side-suggestioncard article .card-texts h4 {
+    width: 50%;
+    font-size: 1.5vw;
+}

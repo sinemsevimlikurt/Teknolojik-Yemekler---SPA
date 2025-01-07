@@ -4,15 +4,15 @@ import SuggestionCard from './SuggestionCard'
 
 function SuggestionCards() {
   return (
-    <div>
-        <div className="main-suggestioncard">
-           <SuggestionCard item={mainCard}/>
-        </div>
-        <div className="side-suggestioncard">
-           {suggestionCardsData.map((item) => (
-            <SuggestionCard item={item} key={item.id}/>
-           ))}
-        </div>
+    <div className='suggestion-cards'>
+      <div className="main-suggestioncard">
+        <SuggestionCard item={mainCard} />
+      </div>
+      <div className="side-suggestioncard">
+        {suggestionCardsData.map((item) => (
+          <SuggestionCard item={item} key={item.id} />
+        ))}
+      </div>
     </div>
   )
 }

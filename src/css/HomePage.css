@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .home {
     background-image: url("/images/iteration-1-images/home-banner.png");
     background-repeat: no-repeat;
@@ -12,13 +13,24 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 }
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    gap: 20px;
+}
+
 .home img {
     align-self: center;
     margin-top: 50px;
     width: 500px;
 }
-.home-text{
+
+.home-text {
     padding: 0;
     position: absolute;
     top: 10px;
@@ -35,7 +47,8 @@ body {
     font-family: "Roboto Condensed", serif;
     width: 600px;
 }
-.home h4{
+
+.home h4 {
     color: #fff;
     font-family: "Roboto Condensed", serif;
     font-size: 70px;
@@ -44,11 +57,10 @@ body {
 }
 
 
-.home-button{
-    position: absolute;
-    top: 295px;
+.home-button {
+    position: relative;
+    bottom: 50%;
     background: #FDC913;
-    margin-top: 40px;
     font-size: 17px;
     line-height: 1.17648;
     font-weight: 500;
@@ -71,37 +83,94 @@ body {
     border: none;
     color: #000;
 }
-.header-nav-buttons nav ul{
+
+.header-nav-buttons nav ul {
     display: flex;
     background-color: #fff;
     flex-direction: row;
     width: 100%;
-    height: 40px;
+    height: 20px;
     justify-content: space-between;
     align-items: center;
+    gap: 100px;
 }
-.header-nav-buttons nav ul li {
+
+.header-nav-buttons {
+    padding: 0 18vw;
+}
+
+.header-nav-buttons nav ul li,
+.nav-menu ul li {
     text-align: center;
     display: flex;
     flex-direction: row;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
     gap: 10px;
 }
-.header-nav-buttons nav ul li img {
+
+.header-nav-buttons nav ul li img,
+.nav-menu ul li img {
     height: 20px;
     width: auto;
 }
-.header-nav-buttons nav ul li p {
+
+.header-nav-buttons nav ul li p,
+.nav-menu ul li p {
     text-align: center;
 }
+
+.nav-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 60px;
+}
+
+.nav-menu ul {
+    background-color: aliceblue;
+    border-radius: 900px;
+    width: 150px;
+    padding-left: 0;
+}
+
+.nav-menu ul:nth-child(2) {
+    background-color: #555;
+    text-align: center;
+
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 50px
+}
+
+.nav-header h4:first-child {
+    font-family: "Satisfy", serif;
+    font-size: 1.4vw;
+    font-weight: 400;
+    color: #ce2829;
+    margin-bottom: 0;
+}
+
+.nav-header h4:nth-child(2) {
+    font-family: "Barlow", serif;
+    font-size: 2.2vw;
+    color: #555;
+    margin-top: 0;
+}
+
 
 @media (max-width: 480px) {
     .home img {
         height: auto;
         width: 80%;
     }
-    .home-text h4{
+
+    .home-text h4 {
         width: 100px;
         font-size: 3rem;
         display: flex;
@@ -109,8 +178,9 @@ body {
         justify-content: center;
         margin-top: 150px;
     }
-    .home-button{
-        margin-top:150px;
+
+    .home-button {
+        margin-top: 150px;
         font-size: 20px;
     }
 }
